@@ -1,7 +1,7 @@
 import sys
 from DbConf import conf as conf1  # Подключение к БД
 
-sys.path.append('R:\СРиСЗП\Инструменты\Python\Download_to_SQL_Gendalf\\venvGendalf\Lib')
+sys.path.append('R:\**********************')
 import pandas as pd
 
 from datetime import datetime
@@ -14,7 +14,7 @@ def xl_to_sql(filexl: str, SchemaDB: str, basetable: str, sheetsxl: str = 0, del
     extension = os.path.splitext(filexl)[1][1:]
     conf = ('Data Source Name=pymssql;'
             ' Driver=ODBC Driver 17 for SQL Server;'
-            ' UID=svc_dev_uprzkil;'
+            ' UID=**********;'
             ' PWD=*******;'
             ' WSID=******;'
             ' APP=Microsoft Office;'
@@ -48,6 +48,6 @@ if __name__ == '__main__':
     # Для запуска укажи Путь к файлу, схему данных таблицы,название таблицы.
     # При необходимости название или номер листа в книге Excel
     # Для списка сотрудников делиметр \t
-    # xl_to_sql('Data\\informatica\\Справочник WHS.xlsx', 'svp_tmp', 'WHS_Phyton_tst', sheetsxl='V_WHS', delim=',')
+    # xl_to_sql('Data\\informatica\\*****.xlsx', 'svp_tmp', 'WHS_Phyton_tst', sheetsxl='V_WHS', delim=',')
     xl_to_sql(str(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3]), str(sys.argv[4]), str(sys.argv[5]))
     print(f'{time.time() - t0:.1f} seconds общее время работы программы')
